@@ -1,7 +1,7 @@
-export const ActionButton = () => {
+export const ActionButton = ({ text }) => {
   return (
     <>
-      <button type="button">おみくじをひく</button>
+      <button type="button">{text}</button>
     </>
   );
 };
