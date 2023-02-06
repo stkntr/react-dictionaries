@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { Omikuji } from "./pages/Omikuji";
 import { Janken } from "./pages/Janken";
 import { EnglishEnglish } from "./pages/English-English";
+// import './App.css'
 
 const App = () => {
   return (
