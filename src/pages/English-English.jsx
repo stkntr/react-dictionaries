@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ActionButton } from "../components/ActionButton";
 
 export const EnglishEnglish = () => {
@@ -16,35 +16,17 @@ export const EnglishEnglish = () => {
     let dictUrl = "https://api.dictionaryapi.dev/api/v2/entries/en/";
     dictUrl += myWord;
     try {
-      // fetch(dictUrl)
-      // .then(res => res.json())
-      // .then(data => {
-      //   setDictInfo(data)
-      // });
       const res = await fetch(dictUrl);
       const json = await res.json();
-      // setDictInfo(json);
-      // console.log(myWord);
-      // console.log(dictInfo.length);
-      // console.log(json.length);
-      return json;
+      console.log(json);
+      setDictInfo(json);
     } catch (error) {
       console.error(error);
     };
   };
 
   const getWordResult = (myWord) => {
-    const result = getDictInfo(myWord);
-
-    result.then((value) => {
-      console.log(value);
-      setDictInfo(value);
-    }, (error) => {
-      console.error("error:", error.message);
-    });
-
-    // console.log(result);
-    console.log(dictInfo.length);
+    getDictInfo(myWord);
     return {
       myWord: myWord,
       result: dictInfo.length,
