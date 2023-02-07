@@ -16,21 +16,35 @@ export const EnglishEnglish = () => {
     let dictUrl = "https://api.dictionaryapi.dev/api/v2/entries/en/";
     dictUrl += myWord;
     try {
+      // fetch(dictUrl)
+      // .then(res => res.json())
+      // .then(data => {
+      //   setDictInfo(data)
+      // });
       const res = await fetch(dictUrl);
       const json = await res.json();
-      await setDictInfo(json);
+      // setDictInfo(json);
       // console.log(myWord);
-      await console.log(dictInfo.length);
+      // console.log(dictInfo.length);
       // console.log(json.length);
+      return json;
     } catch (error) {
       console.error(error);
     };
   };
 
   const getWordResult = (myWord) => {
-    getDictInfo(myWord);
-    // console.log(myWord);
-    // console.log(dictInfo.length);
+    const result = getDictInfo(myWord);
+
+    result.then((value) => {
+      console.log(value);
+      setDictInfo(value);
+    }, (error) => {
+      console.error("error:", error.message);
+    });
+
+    // console.log(result);
+    console.log(dictInfo.length);
     return {
       myWord: myWord,
       result: dictInfo.length,
