@@ -27,9 +27,11 @@ export const EnglishEnglish = () => {
   return (
     <>
       <p>英英辞書の画面</p>
-      <input type="text" name="myWord" size="30" />
+      <label>
+        検索する語句：<input name="myInput" />
+      </label>
       <ActionButton text="英英辞書でひく" action={() => getWord("love")}/>
-      <p>検索語句：{wordResult.myWord}</p>
+      <p>検索した語句：{wordResult.myWord}</p>
       <p>意味：{wordResult.result}</p>
       <p>履歴</p>
       <table>
