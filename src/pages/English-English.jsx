@@ -3,7 +3,7 @@ import { ActionButton } from "../components/ActionButton";
 
 export const EnglishEnglish = () => {
   const [inputedText, setInputedText] = useState("");
-  const [returnedText, setReturnedText] = useState("");
+  const [dictInfo, setDictInfo] = useState([]);
   
   const [wordResult, setWordResult] = useState({
     myWord: "入力待ち",
@@ -12,42 +12,41 @@ export const EnglishEnglish = () => {
 
   const [history, setHistory] = useState([]);
 
-  const getWordInfo = async (myWord) => {
+  const getDictInfo = async (myWord) => {
     let dictUrl = "https://api.dictionaryapi.dev/api/v2/entries/en/";
     dictUrl += myWord;
     try {
       const res = await fetch(dictUrl);
-      const dictInfo = await res.json();
-      // console.log(dictInfo);
-      // await setReturnedText(JSON.stringify(dictInfo)) ;
-      await setReturnedText(dictInfo.length) ;
-      // return "結果";
-      // return JSON.stringify(dictInfo);
+      const json = await res.json();
+      await setDictInfo(json);
+      // console.log(myWord);
+      await console.log(dictInfo.length);
+      // console.log(json.length);
     } catch (error) {
       console.error(error);
-      // return error;
     };
   };
 
   const getWordResult = (myWord) => {
-    //console.log(myWord);
-    getWordInfo(myWord);
+    getDictInfo(myWord);
+    // console.log(myWord);
+    // console.log(dictInfo.length);
     return {
       myWord: myWord,
-      result: returnedText,
+      result: dictInfo.length,
     };
   };
 
   const getWord = (myWord) => {
-    setInputedText(inputedText);
     const result = getWordResult(myWord);
+    setInputedText(inputedText);
     setWordResult(result);
     setHistory([result, ...history]);
   };
 
   return (
     <>
-      <p>英英辞書の画面</p>
+      <h2>英英辞書の画面</h2>
       <label>
         検索する語句：
         <input
@@ -61,7 +60,7 @@ export const EnglishEnglish = () => {
 
       <p>検索した語句：{wordResult.myWord}</p>
       <p>意味：{wordResult.result}</p>
-      <p>履歴</p>
+      <h3>履歴</h3>
       <table>
         <thead>
           <tr>
