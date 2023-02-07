@@ -2,6 +2,9 @@ import { useState } from "react";
 import { ActionButton } from "../components/ActionButton";
 
 export const EnglishEnglish = () => {
+  const [inputedText, setInputedText] = useState("");
+  const [returnedText, setReturnedText] = useState("");
+  
   const [wordResult, setWordResult] = useState({
     myWord: "入力待ち",
     result: "未取得",
@@ -9,16 +12,34 @@ export const EnglishEnglish = () => {
 
   const [history, setHistory] = useState([]);
 
+  const getWordInfo = async (myWord) => {
+    let dictUrl = "https://api.dictionaryapi.dev/api/v2/entries/en/";
+    dictUrl += myWord;
+    try {
+      const res = await fetch(dictUrl);
+      const dictInfo = await res.json();
+      // console.log(dictInfo);
+      // await setReturnedText(JSON.stringify(dictInfo)) ;
+      await setReturnedText(dictInfo.length) ;
+      // return "結果";
+      // return JSON.stringify(dictInfo);
+    } catch (error) {
+      console.error(error);
+      // return error;
+    };
+  };
+
   const getWordResult = (myWord) => {
-
-
+    //console.log(myWord);
+    getWordInfo(myWord);
     return {
       myWord: myWord,
-      result: "愛",
+      result: returnedText,
     };
   };
 
   const getWord = (myWord) => {
+    setInputedText(inputedText);
     const result = getWordResult(myWord);
     setWordResult(result);
     setHistory([result, ...history]);
@@ -28,9 +49,16 @@ export const EnglishEnglish = () => {
     <>
       <p>英英辞書の画面</p>
       <label>
-        検索する語句：<input name="myInput" />
+        検索する語句：
+        <input
+          name="myInput" 
+          value={inputedText}
+          onChange={(event) => setInputedText(event.target.value)}
+        />
       </label>
-      <ActionButton text="英英辞書でひく" action={() => getWord("love")}/>
+      <ActionButton text="英英辞書でひく" action={() => getWord(inputedText)}/>
+      <p>入力した語句：{inputedText}</p>
+
       <p>検索した語句：{wordResult.myWord}</p>
       <p>意味：{wordResult.result}</p>
       <p>履歴</p>
