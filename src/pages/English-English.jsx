@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { ActionButton } from "../components/ActionButton";
 
 export const EnglishEnglish = () => {
@@ -12,14 +12,17 @@ export const EnglishEnglish = () => {
 
   const [history, setHistory] = useState([]);
 
-  const getDictInfo = async (myWord) => {
+  const getDictInfo = (myWord) => {
     let dictUrl = "https://api.dictionaryapi.dev/api/v2/entries/en/";
     dictUrl += myWord;
     try {
-      const res = await fetch(dictUrl);
-      const json = await res.json();
-      console.log(json);
-      setDictInfo(json);
+      fetch(dictUrl)
+      .then(res => res.json())
+      .then((data) => {
+        setDictInfo(data);
+        console.log(data);
+        console.log(dictInfo);
+      });
     } catch (error) {
       console.error(error);
     };
