@@ -5,7 +5,7 @@ export const EnglishEnglish = () => {
   const [inputedText, setInputedText] = useState("");
   const [dictInfo, setDictInfo] = useState([]);
   
-  const [wordResult, setWordResult] = useState({
+  const [lookupResult, setLookupResult] = useState({
     myWord: "入力待ち",
     result: "未取得",
   });
@@ -28,7 +28,7 @@ export const EnglishEnglish = () => {
     };
   };
 
-  const getWordResult = (myWord) => {
+  const getLookupResult = (myWord) => {
     getDictInfo(myWord);
     return {
       myWord: myWord,
@@ -37,9 +37,9 @@ export const EnglishEnglish = () => {
   };
 
   const getWord = (myWord) => {
-    const result = getWordResult(myWord);
+    const result = getLookupResult(myWord);
     setInputedText(inputedText);
-    setWordResult(result);
+    setLookupResult(result);
     setHistory([result, ...history]);
   };
 
@@ -57,8 +57,8 @@ export const EnglishEnglish = () => {
       <ActionButton text="英英辞書でひく" action={() => getWord(inputedText)}/>
       <p>入力した語句：{inputedText}</p>
 
-      <p>検索した語句：{wordResult.myWord}</p>
-      <p>意味：{wordResult.result}</p>
+      <p>検索した語句：{lookupResult.myWord}</p>
+      <p>意味：{lookupResult.result}</p>
       <h3>履歴</h3>
       <table>
         <thead>
