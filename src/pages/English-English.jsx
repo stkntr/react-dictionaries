@@ -6,7 +6,7 @@ export const EnglishEnglish = () => {
   const [dictInfo, setDictInfo] = useState("（未取得）");
   
   const [lookupResult, setLookupResult] = useState({
-    myWord: "入力待ち",
+    myWord: "（入力待ち）",
     // result: "未取得",
   });
 
