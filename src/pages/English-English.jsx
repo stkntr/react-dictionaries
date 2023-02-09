@@ -12,6 +12,7 @@ export const EnglishEnglish = () => {
 
   const [history, setHistory] = useState([]);
 
+  // 取得した辞書のデータを整形する
   const getDictString = (json) => {
     // const dictString = json.length;
     console.log(json);
@@ -31,6 +32,7 @@ export const EnglishEnglish = () => {
     setDictInfo(dictString);
   };
 
+  // 辞書のデータを外部APIから取得する
   const getDictInfo = (myWord) => {
     let dictUrl = "https://api.dictionaryapi.dev/api/v2/entries/en/";
     dictUrl += myWord;
