@@ -55,6 +55,10 @@ export const EnglishEnglish = () => {
               }    
             }
           }
+          if ("origin" in dict) {
+            dictString += "<br><b>Origin:</b> " + dict.origin;
+          }
+
           dictStrings.push(dictString);
         }
         dictString = dictStrings.join("<br>");
