@@ -19,8 +19,14 @@ export const EnglishEnglish = () => {
     let dictString = "";
     try {
       let dictStrings = [];
-      for (let dict of json) {
-        dictStrings.push(dict.word);
+      for (let i=0; i<json.length; i++) {
+        let dict = json[i];
+        if (json.length > 1) {
+          let supNumber = i+1;
+          dictStrings.push(dict.word + supNumber);
+        } else {
+          dictStrings.push(dict.word);
+        }
       }
       dictString = dictStrings.join(", ");
       // console.log(dictString);
