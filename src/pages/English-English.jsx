@@ -3,23 +3,31 @@ import { ActionButton } from "../components/ActionButton";
 
 export const EnglishEnglish = () => {
   const [inputedText, setInputedText] = useState("");
-  const [dictInfo, setDictInfo] = useState([]);
+  const [dictInfo, setDictInfo] = useState("（未取得）");
   
   const [lookupResult, setLookupResult] = useState({
     myWord: "入力待ち",
-    result: "未取得",
+    // result: "未取得",
   });
 
   const [history, setHistory] = useState([]);
 
   const getDictString = (json) => {
     // const dictString = json.length;
-    let dictStrings = [];
-    for (let dict of json) {
-      dictStrings.push(dict.word);
+    console.log(json);
+    let dictString = "";
+    try {
+      let dictStrings = [];
+      for (let dict of json) {
+        dictStrings.push(dict.word);
+      }
+      dictString = dictStrings.join(", ");
+      // console.log(dictString);
+    } catch (error) {
+      console.error(error);
+      console.log("<error on getDictString>");
+      dictString = "（取得できませんでした）";
     }
-    const dictString = dictStrings.join(", ");
-    // console.log(dictString);
     setDictInfo(dictString);
   };
 
@@ -27,11 +35,14 @@ export const EnglishEnglish = () => {
     let dictUrl = "https://api.dictionaryapi.dev/api/v2/entries/en/";
     dictUrl += myWord;
     try {
+      setDictInfo("（取得中…）");
       fetch(dictUrl)
         .then(res => res.json())
         .then(json => getDictString(json));
     } catch (error) {
       console.error(error);
+      console.log("<error>");
+      setDictInfo("<error>");
     };
   };
 
