@@ -47,7 +47,7 @@ export const EnglishEnglish = () => {
               dictString += "&ensp;" + definition + "";
             }
             if (currentDefinition.example) {
-              dictString += " <i>" + currentDefinition.example + "</i>";
+              dictString += "&ensp;<i>" + currentDefinition.example + "</i>";
             }    
           }
         }
