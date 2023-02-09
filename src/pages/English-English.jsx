@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { ActionButton } from "../components/ActionButton";
+// import {superscript} from "numbers-to-superscript";
+import parse from 'html-react-parser';
 
 export const EnglishEnglish = () => {
   const [inputedText, setInputedText] = useState("");
@@ -21,21 +23,41 @@ export const EnglishEnglish = () => {
       let dictStrings = [];
       for (let i=0; i<json.length; i++) {
         let dict = json[i];
+        let dictString = "";
         if (json.length > 1) {
           let supNumber = i+1;
-          dictStrings.push(dict.word + supNumber);
+          // supNumber = superscript(supNumber);
+          dictString = "<b>" + dict.word + "<sup>" + supNumber + "</sup>" + "</b>";
         } else {
-          dictStrings.push(dict.word);
+          dictString = "<b>" + dict.word + "</b>";
         }
+        if (dict.phonetic) {
+          dictString += " " + dict.phonetic;
+        }
+        for (let j=0; j<dict.meanings.length; j++) {
+          let meaning = dict.meanings[j];
+          dictString += "<br>(" + meaning.partOfSpeech + ")";
+          for (let k=0; k<meaning.definitions.length; k++) {
+            if (meaning.definitions.length > 1) {
+              let definitionNumber = k + 1;
+              let definition = meaning.definitions[k].definition;
+              dictString += " <b>" + definitionNumber + ".</b> " + definition + "";
+            } else {
+              let definition = meaning.definitions[k].definition;
+              dictString += " " + definition + "";
+            }
+          }
+        }
+        dictStrings.push(dictString);
       }
-      dictString = dictStrings.join(", ");
+      dictString = dictStrings.join("<br>");
       // console.log(dictString);
     } catch (error) {
       console.error(error);
       console.log("<error on getDictString>");
       dictString = "（取得できませんでした）";
     }
-    setDictInfo(dictString);
+    setDictInfo(parse(dictString));
   };
 
   // 辞書のデータを外部APIから取得する
@@ -85,10 +107,11 @@ export const EnglishEnglish = () => {
         />
       </label>
       <ActionButton text="英英辞書でひく" action={() => getWord(inputedText)}/>
-      <p>入力した語句：{inputedText}</p>
+      {/* <p>入力した語句：{inputedText}</p> */}
 
       <p>検索した語句：{lookupResult.myWord}</p>
-      <p>意味：{dictInfo}</p>
+      <p>意味：</p>
+      <p>{dictInfo}</p>
       <h3>検索履歴</h3>
       <table>
         <thead>

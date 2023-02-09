@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "html-react-parser": "^3.0.8",
+    "numbers-to-superscript": "^1.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.0"
