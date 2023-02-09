@@ -38,14 +38,17 @@ export const EnglishEnglish = () => {
           let meaning = dict.meanings[j];
           dictString += "<br>(" + meaning.partOfSpeech + ")";
           for (let k=0; k<meaning.definitions.length; k++) {
+            let currentDefinition = meaning.definitions[k];
+            let definition = currentDefinition.definition;
             if (meaning.definitions.length > 1) {
               let definitionNumber = k + 1;
-              let definition = meaning.definitions[k].definition;
-              dictString += " <b>" + definitionNumber + ".</b> " + definition + "";
+              dictString += "&ensp;<b>" + definitionNumber + ".</b> " + definition + "";
             } else {
-              let definition = meaning.definitions[k].definition;
-              dictString += " " + definition + "";
+              dictString += "&ensp;" + definition + "";
             }
+            if (currentDefinition.example) {
+              dictString += " <i>" + currentDefinition.example + "</i>";
+            }    
           }
         }
         dictStrings.push(dictString);
@@ -54,7 +57,7 @@ export const EnglishEnglish = () => {
       // console.log(dictString);
     } catch (error) {
       console.error(error);
-      console.log("<error on getDictString>");
+      // console.log("<error on getDictString>");
       dictString = "（取得できませんでした）";
     }
     setDictInfo(parse(dictString));
