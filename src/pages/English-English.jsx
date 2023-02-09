@@ -31,7 +31,7 @@ export const EnglishEnglish = () => {
         } else {
           dictString = "<b>" + dict.word + "</b>";
         }
-        if (dict.phonetic) {
+        if ("phonetic" in dict) {
           dictString += " " + dict.phonetic;
         }
         for (let j=0; j<dict.meanings.length; j++) {
@@ -46,7 +46,7 @@ export const EnglishEnglish = () => {
             } else {
               dictString += "&ensp;" + definition + "";
             }
-            if (currentDefinition.example) {
+            if ("example" in currentDefinition) {
               dictString += "&ensp;<i>" + currentDefinition.example + "</i>";
             }    
           }
