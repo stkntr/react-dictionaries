@@ -126,7 +126,7 @@ export const EnglishEnglish = () => {
           <label>
             検索する語句：
             <input
-              className="border px-2 py-1 mx-2" 
+              className="border px-2 py-1 mr-2" 
               name="myInput" 
               value={inputedText}
               onChange={(event) => setInputedText(event.target.value)}
