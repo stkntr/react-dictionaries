@@ -111,10 +111,14 @@ export const EnglishEnglish = () => {
   };
 
   const getWord = (myWord) => {
-    const result = getLookupResult(myWord);
-    setInputedText(inputedText);
-    setLookupResult(result);
-    setHistory([result, ...history]);
+    if (myWord !== "") {
+      const result = getLookupResult(myWord);
+      setInputedText(inputedText);
+      setLookupResult(result);
+      setHistory([result, ...history]);
+    } else {
+      
+    }
   };
 
   return (
