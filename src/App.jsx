@@ -7,24 +7,29 @@ import { EnglishEnglish } from "./pages/English-English";
 const App = () => {
   return (
     <BrowserRouter>
-      <h1>react app</h1>
-      <ul>
-        <li>
-          <Link to="/omikuji">おみくじ</Link>
-        </li>
-        <li>
-          <Link to="/janken">じゃんけん</Link>
-        </li>
-        <li>
-          <Link to="/english-english">英英辞書</Link>
-        </li>
-      </ul>
-      <hr />
-      <Routes>
-        <Route path="/omikuji" element={<Omikuji />} />
-        <Route path="/janken" element={<Janken />} />
-        <Route path="/english-english" element={<EnglishEnglish />} />
-      </Routes>
+      <header className="flex justify-center">
+        <h1 className="text-3xl font-bold">react app</h1>
+      </header>
+      <main>
+        <ul className="text-center">
+          <li>
+            <Link to="/omikuji">おみくじ</Link>
+          </li>
+          <li>
+            <Link to="/janken">じゃんけん</Link>
+          </li>
+          <li>
+            <Link to="/english-english">英英辞書</Link>
+          </li>
+        </ul>
+        <hr />
+        <Routes>
+          <Route path="/omikuji" element={<Omikuji />} />
+          <Route path="/janken" element={<Janken />} />
+          <Route path="/english-english" element={<EnglishEnglish />} />
+        </Routes>
+
+      </main>
     </BrowserRouter>
   );
 };
