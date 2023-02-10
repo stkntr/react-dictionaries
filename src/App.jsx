@@ -11,18 +11,21 @@ const App = () => {
         <h1 className="text-3xl font-bold">react app</h1>
       </header>
       <main>
-        <ul className="text-center">
-          <li>
-            <Link to="/omikuji">おみくじ</Link>
-          </li>
-          <li>
-            <Link to="/janken">じゃんけん</Link>
-          </li>
-          <li>
-            <Link to="/english-english">英英辞書</Link>
-          </li>
-        </ul>
-        <hr />
+        <section>
+          <ul className="text-center">
+            <li>
+              <Link to="/omikuji">おみくじ</Link>
+            </li>
+            <li>
+              <Link to="/janken">じゃんけん</Link>
+            </li>
+            <li>
+              <Link to="/english-english">英英辞書</Link>
+            </li>
+          </ul>
+        </section>
+        <hr className="mx-8 my-4" />
+
         <Routes>
           <Route path="/omikuji" element={<Omikuji />} />
           <Route path="/janken" element={<Janken />} />

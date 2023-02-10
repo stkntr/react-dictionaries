@@ -34,7 +34,7 @@ export const Janken = () => {
 
   return (
     <>
-      <p>じゃんけんの画面</p>
+      <p className="text-center">じゃんけんの画面</p>
       <ActionButton text="グー" action={() => getJanken("グー")}/>
       <ActionButton text="チョキ" action={() => getJanken("チョキ")}/>
       <ActionButton text="パー" action={() => getJanken("パー")}/>

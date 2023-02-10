@@ -119,38 +119,49 @@ export const EnglishEnglish = () => {
 
   return (
     <>
-      <h2>英英辞書の画面</h2>
-      <label>
-        検索する語句：
-        <input
-          name="myInput" 
-          value={inputedText}
-          onChange={(event) => setInputedText(event.target.value)}
-        />
-      </label>
-      <ActionButton text="英英辞書でひく" action={() => getWord(inputedText)}/>
-      {/* <p>入力した語句：{inputedText}</p> */}
+      <h2 className="text-center">英英辞書の画面</h2>
 
-      <p>検索した語句：{lookupResult.myWord}</p>
-      <p>意味：</p>
-      <p>{dictInfo}</p>
-      <h3>検索履歴</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>検索語句</th>
-            {/* <th>意味</th> */}
-          </tr>
-        </thead>
-        <tbody>
-          {history.map((x, i) => (
-            <tr key={i}>
-              <td>{x.myWord}</td>
-              {/* <td>{x.result}</td> */}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <section className="flex">
+        <section className="w-3/4 p-8">
+          <label>
+            検索する語句：
+            <input
+              className="border px-2 py-1 mx-2" 
+              name="myInput" 
+              value={inputedText}
+              onChange={(event) => setInputedText(event.target.value)}
+            />
+          </label>
+          <ActionButton text="英英辞書でひく" action={() => getWord(inputedText)}/>
+          {/* <p>入力した語句：{inputedText}</p> */}
+
+          {/* <p>検索した語句：{lookupResult.myWord}</p> */}
+          <p>意味：</p>
+          <p>{dictInfo}</p>
+        </section>
+
+        <section className="w-1/4 p-8">
+          {/* <h3>検索履歴</h3> */}
+          <table>
+            <thead>
+              <tr>
+                <th>検索語句履歴</th>
+                {/* <th>意味</th> */}
+              </tr>
+            </thead>
+            <tbody>
+              {history.map((x, i) => (
+                <tr key={i}>
+                  <td>{x.myWord}</td>
+                  {/* <td>{x.result}</td> */}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
+
+      </section>
+
     </>
   );
 };
