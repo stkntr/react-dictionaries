@@ -117,7 +117,7 @@ export const EnglishEnglish = () => {
       setLookupResult(result);
       setHistory([result, ...history]);
     } else {
-      
+
     }
   };
 
@@ -130,7 +130,7 @@ export const EnglishEnglish = () => {
           <label>
             検索する語句：
             <input
-              className="border px-2 py-1 mr-2" 
+              className="border px-2 py-1 mr-2 shadow-inner" 
               name="myInput" 
               value={inputedText}
               onChange={(event) => setInputedText(event.target.value)}
@@ -144,12 +144,12 @@ export const EnglishEnglish = () => {
           <p>{dictInfo}</p>
         </section>
 
-        <section className="w-1/4 p-8">
+        <section className="w-1/4 p-8 border-l">
           {/* <h3>検索履歴</h3> */}
           <table>
             <thead>
               <tr>
-                <th>検索語句履歴</th>
+                <th>検索履歴</th>
                 {/* <th>意味</th> */}
               </tr>
             </thead>
