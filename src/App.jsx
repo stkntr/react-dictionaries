@@ -7,7 +7,7 @@ import { EnglishEnglish } from "./pages/English-English";
 const App = () => {
   return (
     <BrowserRouter>
-      <header className="flex justify-center">
+      <header className="flex justify-center p-4">
         <h1 className="text-3xl font-bold">react app</h1>
       </header>
       <main>

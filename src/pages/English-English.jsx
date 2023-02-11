@@ -124,23 +124,23 @@ export const EnglishEnglish = () => {
   return (
     <>
       <h2 className="font-bold text-center">英英辞書</h2>
+      <section className="text-center py-4">
+        <label>
+          <span className="font-bold">検索語句：</span>
+          <input
+            className="w-24 border px-2 py-1 mr-2 shadow-inner" 
+            name="myInput" 
+            value={inputedText}
+            onChange={(event) => setInputedText(event.target.value)}
+          />
+        </label>
+        <ActionButton text="辞書でひく" action={() => getWord(inputedText)}/>
+        {/* <p>入力した語句：{inputedText}</p> */}
+        {/* <p>検索した語句：{lookupResult.myWord}</p> */}
+      </section>
 
       <section className="sm:flex">
         <section className="sm:w-3/4 p-8">
-          <section className="text-center">
-            <label>
-              <span className="font-bold">検索語句：</span>
-              <input
-                className="w-24 border px-2 py-1 mr-2 shadow-inner" 
-                name="myInput" 
-                value={inputedText}
-                onChange={(event) => setInputedText(event.target.value)}
-              />
-            </label>
-            <ActionButton text="英英辞書でひく" action={() => getWord(inputedText)}/>
-            {/* <p>入力した語句：{inputedText}</p> */}
-            {/* <p>検索した語句：{lookupResult.myWord}</p> */}
-          </section>
           <section>
             <h3 className="font-bold">検索結果：</h3>
             <p className="">{dictInfo}</p>
