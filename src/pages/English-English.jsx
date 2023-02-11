@@ -90,7 +90,12 @@ export const EnglishEnglish = () => {
       setDictInfo("（取得中…）");
       fetch(dictUrl)
         .then(res => res.json())
-        .then(json => getDictString(json));
+        .then(json => getDictString(json))
+        .catch(err => {
+          console.error(err);
+          setDictInfo("（取得できませんでした）");
+        });
+        // .catch(err => console.error(err));
     } catch (error) {
       console.error(error);
       console.log("<error>");
