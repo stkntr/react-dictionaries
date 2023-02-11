@@ -140,28 +140,17 @@ export const EnglishEnglish = () => {
           {/* <p>入力した語句：{inputedText}</p> */}
 
           {/* <p>検索した語句：{lookupResult.myWord}</p> */}
-          <p>意味：</p>
+          <h3>意味：</h3>
           <p className="">{dictInfo}</p>
         </section>
 
         <section className="sm:w-1/4 p-8 pt-0 sm:pt-8 sm:border-l">
-          {/* <h3>検索履歴</h3> */}
-          <table>
-            <thead>
-              <tr>
-                <th>検索履歴</th>
-                {/* <th>意味</th> */}
-              </tr>
-            </thead>
-            <tbody>
-              {history.map((x, i) => (
-                <tr key={i}>
-                  <td>{x.myWord}</td>
-                  {/* <td>{x.result}</td> */}
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <h3>検索履歴：</h3>
+          <ul>
+            {history.map((x, i) => (
+              <li>{x.myWord}</li>
+            ))}
+          </ul>
         </section>
 
       </section>
