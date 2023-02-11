@@ -31,7 +31,7 @@ export const EnglishEnglish = () => {
           if (json.length > 1) {
             let supNumber = i+1;
             // supNumber = superscript(supNumber);
-            dictString = "<b>" + dict.word + "<sup>" + supNumber + "</sup>" + "</b>";
+            dictString = "<b>" + dict.word + "<sup> " + supNumber + "</sup>" + "</b>";
           } else {
             dictString = "<b>" + dict.word + "</b>";
           }
@@ -128,7 +128,7 @@ export const EnglishEnglish = () => {
         <label>
           <span className="font-bold">検索語句：</span>
           <input
-            className="w-24 border px-2 py-1 mr-2 shadow-inner" 
+            className="w-28 border px-2 py-1 mr-2 shadow-inner" 
             name="myInput" 
             value={inputedText}
             onChange={(event) => setInputedText(event.target.value)}
