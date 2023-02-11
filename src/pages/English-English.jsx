@@ -125,12 +125,12 @@ export const EnglishEnglish = () => {
     <>
       <h2 className="text-center">英英辞書の画面</h2>
 
-      <section className="flex">
-        <section className="w-3/4 p-8">
+      <section className="sm:flex">
+        <section className="sm:w-3/4 p-8">
           <label>
-            検索する語句：
+            検索語句：
             <input
-              className="border px-2 py-1 mr-2 shadow-inner" 
+              className="w-24 border px-2 py-1 mr-2 shadow-inner" 
               name="myInput" 
               value={inputedText}
               onChange={(event) => setInputedText(event.target.value)}
@@ -141,10 +141,10 @@ export const EnglishEnglish = () => {
 
           {/* <p>検索した語句：{lookupResult.myWord}</p> */}
           <p>意味：</p>
-          <p>{dictInfo}</p>
+          <p className="">{dictInfo}</p>
         </section>
 
-        <section className="w-1/4 p-8 border-l">
+        <section className="sm:w-1/4 p-8 pt-0 sm:pt-8 sm:border-l">
           {/* <h3>検索履歴</h3> */}
           <table>
             <thead>
