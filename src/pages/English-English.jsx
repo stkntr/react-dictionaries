@@ -17,8 +17,8 @@ export const EnglishEnglish = () => {
   // 取得した辞書のデータを整形する
   const getDictString = (json) => {
     // const dictString = json.length;
-    console.log(json);
-    console.log(json instanceof Array);
+    // console.log(json);
+    // console.log(json instanceof Array);
 
     let dictString = "";
 
