@@ -10,7 +10,7 @@ const App = () => {
       <header className="flex justify-center p-4">
         <h1 className="text-3xl font-bold">react app</h1>
       </header>
-      <main>
+      <main className="max-w-5xl m-auto">
         <section>
           <ul className="text-center">
             <li>
