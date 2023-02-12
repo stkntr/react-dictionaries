@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { Omikuji } from "./pages/Omikuji";
 import { Janken } from "./pages/Janken";
 import { EnglishEnglish } from "./pages/English-English";
+import { Urban } from "./pages/Urban";
 // import './App.css'
 
 const App = () => {
@@ -22,6 +23,9 @@ const App = () => {
             <li>
               <Link to="/english-english">英英辞書</Link>
             </li>
+            <li>
+              <Link to="/urban">スラング辞書</Link>
+            </li>
           </ul>
         </section>
         <hr className="mx-8 my-4" />
@@ -30,6 +34,7 @@ const App = () => {
           <Route path="/omikuji" element={<Omikuji />} />
           <Route path="/janken" element={<Janken />} />
           <Route path="/english-english" element={<EnglishEnglish />} />
+          <Route path="/urban" element={<Urban />} />
         </Routes>
 
       </main>
