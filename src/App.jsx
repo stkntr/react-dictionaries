@@ -9,7 +9,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <header className="flex justify-center p-4">
-        <h1 className="text-3xl font-bold">react dictionaries</h1>
+        <h1 className="text-2xl font-bold">React Dictionaries</h1>
       </header>
       <main className="max-w-5xl m-auto">
         <section>
@@ -24,7 +24,7 @@ const App = () => {
               <Link to="/english-english">英英辞書</Link>
             </li>
             <li>
-              <Link to="/urban">スラング辞書</Link>
+              <Link to="/urban">Urban Dictionary</Link>
             </li>
           </ul>
         </section>
