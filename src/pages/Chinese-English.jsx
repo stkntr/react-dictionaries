@@ -28,7 +28,9 @@ export const ChineseEnglish = () => {
         // console.log(json[0]);
         // console.log(myWord);
         let dictStrings = [];
-        const entries = json.filter(entry => entry.simplified == myWord);
+        const entries = json.filter(
+          entry => entry.simplified === myWord || entry.traditional === myWord
+          );
         // console.log(entries.length);
         for (let i=0; i<entries.length; i++) {
           let entry = entries[i];
