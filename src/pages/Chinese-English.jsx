@@ -36,13 +36,12 @@ export const ChineseEnglish = () => {
           let entry = entries[i];
           // console.log(entry);
           let currentString = ""
-          currentString += entry.simplified;
-          currentString += "（" + entry.traditional + "）";
+          currentString += entry.traditional;
+          currentString += "（" + entry.simplified + "）";
           currentString += "［" + entry.pinyin + "］";
           for (let j=0; j<entry.english.length; j++) {
-            let currentNumber = j + 1;
             let currentEnglish = entry.english[j];
-            currentString += "<br>" + currentNumber + ". " + currentEnglish;
+            currentString += "<br>" + "• " + currentEnglish;
           }
           dictStrings.push(currentString);
         }
