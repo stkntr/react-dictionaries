@@ -32,20 +32,28 @@ export const ChineseEnglish = () => {
           entry => entry.simplified === myWord || entry.traditional === myWord
           );
         // console.log(entries.length);
-        for (let i=0; i<entries.length; i++) {
-          let entry = entries[i];
-          // console.log(entry);
-          let currentString = ""
-          currentString += entry.traditional;
-          currentString += "（" + entry.simplified + "）";
-          currentString += "［" + entry.pinyin + "］";
-          for (let j=0; j<entry.english.length; j++) {
-            let currentEnglish = entry.english[j];
-            currentString += "<br>" + "• " + currentEnglish;
-          }
-          dictStrings.push(currentString);
+        if (entries.length > 0) {
+          for (let i=0; i<entries.length; i++) {
+            let entry = entries[i];
+            // console.log(entry);
+            let currentString = ""
+            currentString += "<b>" + entry.traditional;
+            currentString += "（" + entry.simplified + "）</b>";
+            currentString += "[" + entry.pinyin + "]";
+            for (let j=0; j<entry.english.length; j++) {
+              let currentEnglish = entry.english[j];
+              if (currentEnglish.startsWith("CL:")) {
+                currentString += "<br>" + currentEnglish;
+              } else {
+                currentString += "<br>" + "• " + currentEnglish;
+              }
+            }
+            dictStrings.push(currentString);
+          }  
+          dictString = dictStrings.join("<br>");
+        } else {
+          dictString = "（項目がありませんでした）";
         }
-        dictString = dictStrings.join("<br>");
         // console.log(dictString);
       } catch (error) {
         console.error(error);
