@@ -47,7 +47,7 @@ export const ChineseEnglish = () => {
           dictStrings.push(currentString);
         }
         dictString = dictStrings.join("<br>");
-        console.log(dictString);
+        // console.log(dictString);
       } catch (error) {
         console.error(error);
         // console.log("<error on getDictString>");
