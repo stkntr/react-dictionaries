@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "/works/gs_exp_react/",
+  "homepage": "/works/react-dict/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

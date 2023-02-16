@@ -4,7 +4,7 @@
 
 React の講座のオリジナルアプリ作成の課題で辞書を作ろうと思い、「[Free Dictionary API](https://dictionaryapi.dev/)」と、「cedict-json」を利用して、英英辞書と中英辞書を作りました。
 
-* 動作確認ページ：[React Dictionaries](https://stkntr.sakura.ne.jp/works/gs_exp_react/index.html)
+* 動作確認ページ：[React Dictionaries](https://stkntr.sakura.ne.jp/works/react-dict/index.html)
 
 ## 工夫した部分
 
