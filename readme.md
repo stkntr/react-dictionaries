@@ -1,8 +1,8 @@
-# react-dictionaries
+# React Dictionaries
 
 ## プロダクトの紹介
 
-「[Free Dictionary API](https://dictionaryapi.dev/)」と、「cedict-json」を利用して、英英辞書と中英辞書を作りました。
+React の講座の課題で、「[Free Dictionary API](https://dictionaryapi.dev/)」と、「cedict-json」を利用して、英英辞書と中英辞書を作りました。
 
 * 動作確認ページ：[React Dictionaries](https://stkntr.sakura.ne.jp/works/gs_exp_react/index.html)
 
@@ -15,3 +15,4 @@
 1. React自体とJavaScriptの非同期処理等の理解が今一つで、詰まりました。
 1. ES2015以降のJavaScriptの書き方と、Reactと、Viteと、Tailwind CSSと色々勉強しながら作成したので大変でしたが、勉強になり、面白かったです。
 1. 「[Free Dictionary API](https://dictionaryapi.dev/)」自体が反応しなくなるなどトラブルが起こり、苦慮しましたが、エラー処理の見直しにもなりました。
+1. サブディレクトリにデプロイするやり方も注意点があり、苦労しました。
