@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { EnglishEnglish } from "./pages/English-English";
 import { ChineseEnglish } from "./pages/Chinese-English";
-import { Urban } from "./pages/Urban";
 // import './App.css'
 
 const App = () => {
@@ -19,9 +18,6 @@ const App = () => {
             <li>
               <Link to="/chinese-english">中英辞書</Link>
             </li>
-            <li>
-              <Link to="/urban">Urban Dictionary</Link>
-            </li>
           </ul>
         </section>
         <hr className="mx-8 my-4" />
@@ -29,7 +25,6 @@ const App = () => {
         <Routes>
           <Route path="/english-english" element={<EnglishEnglish />} />
           <Route path="/chinese-english" element={<ChineseEnglish />} />
-          <Route path="/urban" element={<Urban />} />
         </Routes>
 
       </main>
