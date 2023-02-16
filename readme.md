@@ -4,7 +4,7 @@
 
 「[Free Dictionary API](https://dictionaryapi.dev/)」と、「cedict-json」を利用して、英英辞書と中英辞書を作りました。
 
-* 動作確認ページ：[React Dictionaries](https://stkntr.sakura.ne.jp/english-english)
+* 動作確認ページ：[React Dictionaries](https://stkntr.sakura.ne.jp/works/gs_exp_react/index.html)
 
 ## 工夫した部分
 
