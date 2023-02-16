@@ -5,7 +5,7 @@ import { ChineseEnglish } from "./pages/Chinese-English";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/works/gs_exp_react/">
       <header className="flex justify-center p-4">
         <h1 className="text-2xl font-bold">React Dictionaries</h1>
       </header>
