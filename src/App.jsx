@@ -11,7 +11,7 @@ const App = () => {
       </header>
       <main className="max-w-5xl m-auto">
         <section>
-          <ul className="text-center">
+          <ul className="text-center underline underline-offset-2">
             <li>
               <Link to="/english-english">英英辞書</Link>
             </li>
