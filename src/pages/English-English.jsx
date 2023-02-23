@@ -17,7 +17,7 @@ export const EnglishEnglish = () => {
   // 取得した辞書のデータを整形する
   const getDictString = (json) => {
     // const dictString = json.length;
-    // console.log(json);
+    console.log(json);
     // console.log(json instanceof Array);
 
     let dictString = "";
@@ -53,6 +53,9 @@ export const EnglishEnglish = () => {
               if ("example" in currentDefinition) {
                 dictString += "&ensp;<i>" + currentDefinition.example + "</i>";
               }    
+            }
+            if (meaning.synonyms.length > 0) {
+              dictString += "&ensp;[Synonyms: " + meaning.synonyms.join(", ") + "]";
             }
           }
           if ("origin" in dict) {
