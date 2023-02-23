@@ -55,10 +55,10 @@ export const EnglishEnglish = () => {
               }    
             }
             if (meaning.synonyms.length > 0) {
-              dictString += "&ensp;[Synonyms: " + meaning.synonyms.join(", ") + "]";
+              dictString += "<br>[Synonyms: " + meaning.synonyms.join(", ") + "]";
             }
             if (meaning.antonyms.length > 0) {
-              dictString += "&ensp;[Antonyms: " + meaning.antonyms.join(", ") + "]";
+              dictString += "<br>[Antonyms: " + meaning.antonyms.join(", ") + "]";
             }
           }
           if ("origin" in dict) {
