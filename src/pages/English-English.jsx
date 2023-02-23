@@ -57,6 +57,9 @@ export const EnglishEnglish = () => {
             if (meaning.synonyms.length > 0) {
               dictString += "&ensp;[Synonyms: " + meaning.synonyms.join(", ") + "]";
             }
+            if (meaning.antonyms.length > 0) {
+              dictString += "&ensp;[Antonyms: " + meaning.antonyms.join(", ") + "]";
+            }
           }
           if ("origin" in dict) {
             dictString += "<br><b>Origin:</b> " + dict.origin;
